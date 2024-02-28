@@ -19,6 +19,17 @@ Dive in, elevate your Nuxt and Storyblok experience, and witness the synergy of 
 - Uses [Bun](https://bun.sh/) for task running
 - Configures [eslint](https://eslint.org/docs/user-guide/getting-started) with opinionated rules
 
+## Using this boilerplate in a new project
+
+Use the following command to create a new project based on this boilerplate. Replace `<project-name>` with the actual name of your project.
+
+```bash
+# bun
+bunx create coderscantina/nuxt-storyblok-boilerplate <project-name>
+# npm
+npx degit coderscantina/nuxt-storyblok-boilerplate <project-name>
+```
+
 ## Storyblok Setup
 
 1. Create a new space in Storyblok
