@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --grid-margin: .75rem;
+    @apply md:[--grid-margin:8vw] xl:[--grid-margin:16vw];
+  }
+
+  .content-grid {
+    @apply gap-3 md:gap-x-8;
+
+    display: grid;
+    grid-template-columns:
+    [full-width-start]
+      calc(var(--grid-margin) - 2rem)
+      [content-start]
+        repeat(2, minmax(0, 1fr))
+        [narrow-start]
+          repeat(8, minmax(0, 1fr))
+        [narrow-end]
+        repeat(2, minmax(0, 1fr))
+      [content-end]
+      calc(var(--grid-margin) - 2rem)
+    [full-width-end]
+  ;
+  }
+
+  .content-grid > :not(.content-full-width):not([class*="col-"]) {
+    grid-column: content;
+  }
+
+  .content-grid > .content-full-width {
+    grid-column: full-width;
+  }
+
+  @media (min-width: 1024px) {
+    .content-grid > .content-narrow {
+      grid-column: narrow !important;
+    }
+  }
+
+  body {
+    @apply antialiased h-full;
+  }
+}

@@ -1,0 +1,39 @@
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Node dependencies
+node_modules
+
+# Logs
+logs
+*.log
+
+# ignore .yarn folder, except plugins and releases
+.yarn/*
+!.yarn/plugins
+!.yarn/releases
+
+# Misc
+.DS_Store
+.fleet
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+.aws-sam
+localhost.crt
+localhost.key
+
+# Local env files
+.env
+.env.*
+!.env.example
