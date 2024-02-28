@@ -49,13 +49,21 @@ npx degit coderscantina/nuxt-storyblok-boilerplate <project-name>
 Make sure you've installed the storyblok CLI:
 
 ```bash
+# npm
 npm i storyblok -g
+# yarn 
+yarn global add storyblok
 ```
 
 Make sure to install the dependencies:
 
 ```bash
+# bun
 bun install
+# npm
+npm i
+# yarn
+yarn i
 ```
 
 Make sure to create a local SSL certificate: 
@@ -68,7 +76,7 @@ openssl req -new -x509 -nodes -sha256 -days 365 -key localhost.key -out localhos
 
 Reference it in the `package.json` file, in the `scripts` section:
 
-```json
+```json5
 {
   // ...
   "scripts": {
@@ -83,7 +91,12 @@ Reference it in the `package.json` file, in the `scripts` section:
 Start the development server on `https://localhost:3000`:
 
 ```bash
+# bun
 bun run dev-ssl
+# npm
+npm run dev-ssl
+# yarn
+yarn dev-ssl
 ```
 
 ## Production
@@ -91,13 +104,23 @@ bun run dev-ssl
 Build the application for production:
 
 ```bash
+# bun
 bun run build
+# npm
+npm run build
+# yarn
+yarn build
 ```
 
 Locally preview production build:
 
 ```bash
+# bun
 bun run preview
+# npm
+npm run preview
+# yarn
+yarn preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
