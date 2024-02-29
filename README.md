@@ -123,4 +123,8 @@ npm run preview
 yarn preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Check out the [Nuxt Deployment Documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## License
+
+[MIT](./LICENSE)
