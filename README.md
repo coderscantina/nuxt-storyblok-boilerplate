@@ -1,5 +1,10 @@
 # Nuxt 3 + Storyblok Boilerplate
 
+<p>
+  <img alt="GitHub Tag" src="https://img.shields.io/github/v/tag/coderscantina/nuxt-storyblok-boilerplate?style=flat&colorA=18181B&colorB=FF1744">
+  <a href="./LICENSE"><img src="https://img.shields.io/github/license/nuxt/nuxt.svg?style=flat&colorA=18181B&colorB=FF1744" alt="License"></a>
+</p>
+
 The opinionated boilerplate for Nuxt and Storyblok that empowers your web development journey!
 Kickstart your projects on a solid foundation, embracing best practices and seamless integration.
 Expedite your development process with our carefully curated setup.
@@ -32,13 +37,15 @@ npx degit coderscantina/nuxt-storyblok-boilerplate <project-name>
 
 ## Storyblok Setup
 
+Follow the storyblok setup steps to get started with this boilerplate:
+
 1. Create a new space in Storyblok
-  1. Adapt the `package.json` file to use the new space id. Replace the `<space>` placeholder with the actual space id.
-  2. Go to `Settings` -> `Visual Editor` and add `https://localhost:3000` as Preview URL
+   1. Adapt the `package.json` file to use the new space id. Replace the `<space>` placeholder with the actual space id.
+   2. Go to `Settings` -> `Visual Editor` and add `https://localhost:3000` as Preview URL
 2. Create a new API token in Storyblok
-  1. Go to `Settings` -> `Access token` -> `Generate`
-  2. Give it a name and select `Preview` access level
-  3. Put the token in a `.env` file as `NUXT_STORYBLOK_ACCESS_TOKEN`
+   1. Go to `Settings` -> `Access token` -> `Generate`
+   2. Give it a name and select `Preview` access level
+   3. Put the token in a `.env` file as `NUXT_STORYBLOK_ACCESS_TOKEN`
 3. Login via the CLI
    ```bash
    storyblok login
@@ -55,7 +62,7 @@ npm i storyblok -g
 yarn global add storyblok
 ```
 
-Make sure to install the dependencies:
+Install the required dependencies:
 
 ```bash
 # bun
@@ -66,7 +73,7 @@ npm i
 yarn i
 ```
 
-Make sure to create a local SSL certificate: 
+Provide an SSL-certificate in the root of the project. You can create a self-signed certificate with the following commands: 
 
 ```bash
 openssl genrsa 2048 > localhost.key
