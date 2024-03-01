@@ -48,11 +48,11 @@ export default function useStoryblokHelpers() {
       description,
       ogTitle: ogTitle || (typeof title === 'string' ? title : undefined),
       ogDescription: ogDescription || description,
-      ogImage,
+      ogImage: ogImage ? `${ogImage}1200x630` : undefined,
       twitterCard: 'summary',
       twitterTitle: twitterTitle || ogTitle || (typeof title === 'string' ? title : undefined),
       twitterDescription: twitterDescription || ogDescription || description,
-      twitterImage: twitterImage || ogImage,
+      twitterImage: twitterImage ? `${twitterImage}1600x900` : undefined,
     })
   }
 
