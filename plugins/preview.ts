@@ -1,6 +1,7 @@
 export default defineNuxtPlugin((nuxtApp) => {
   const route = useRoute()
-  const preview = route.query?._storyblok || process.env.NUXT_PUBLIC_APP_ENV !== 'production'
+  const runtimeConfig = useRuntimeConfig()
+  const preview = route.query?._storyblok || runtimeConfig.public.appEnv !== 'production'
 
   if (preview) {
     nuxtApp.hook('page:finish', () => {
