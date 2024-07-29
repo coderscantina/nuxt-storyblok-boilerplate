@@ -19,7 +19,7 @@
   "dependencies": {
     "@storyblok/nuxt": "^6.0.4",
     "dayjs": "^1.11.10",
-    "marked": "^12.0.0"
+    "marked": "^13.0.3"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
