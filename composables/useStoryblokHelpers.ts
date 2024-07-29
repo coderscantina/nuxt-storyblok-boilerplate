@@ -1,11 +1,12 @@
 import type { UseSeoMetaInput } from '@unhead/schema'
 import type { ISbStoriesParams } from '@storyblok/vue'
-import type { ConfigStoryblok, PageStoryblok } from '~/storyblok/types'
+import type { ConfigStoryblok, MultilinkStoryblok, PageStoryblok } from '~/storyblok/types'
 
 export default function useStoryblokHelpers() {
   const config = useState<ConfigStoryblok>('config')
 
   const { $preview } = useNuxtApp()
+  const localePath = useLocalePath()
   const version = $preview ? 'draft' : 'published'
   const { locale } = useI18n()
   const defaults: Pick<ISbStoriesParams, 'version' | 'language'> = {
@@ -56,11 +57,27 @@ export default function useStoryblokHelpers() {
     })
   }
 
+  function buildLink({ linktype, url, cached_url, anchor }: MultilinkStoryblok) {
+    if (linktype === 'story') {
+      const postfix = anchor ? `#${anchor}` : ''
+      return localePath(`/${cached_url}${postfix}`)
+    }
+    if (linktype === 'url') {
+      return url
+    }
+    if (linktype === 'email') {
+      return `mailto:${url}`
+    }
+
+    return url.trim() ? url : localePath(`/${cached_url}`)
+  }
+
   callOnce(async() => {
     await loadConfig()
   }).then()
 
   return {
+    buildLink,
     config,
     defaults,
     setMetaFromPage
