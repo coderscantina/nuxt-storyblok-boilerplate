@@ -6,9 +6,12 @@ const year = computed(() => new Date().getFullYear())
 </script>
 
 <template>
-  <footer class="py-20 content-grid">
-
-  </footer>
+  <footer
+    v-editable="config?.content"
+    class="content-grid bg-black py-20"
+    role="contentinfo"
+    aria-label="Site footer"
+  />
 </template>
 
 <style scoped>

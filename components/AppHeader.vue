@@ -8,9 +8,15 @@ const { config } = useStoryblokHelpers()
 </script>
 
 <template>
-  <header class="sticky top-0 z-40 overflow-x-clip">
+  <header
+    class="sticky top-0 z-40 overflow-x-clip"
+    role="banner"
+  >
     <div class="content-grid">
-      <div class="flex items-center">
+      <div
+        v-editable="config?.content"
+        class="flex items-center"
+      >
         <NuxtLink
           :to="localePath('/')"
           class="shrink-0"
