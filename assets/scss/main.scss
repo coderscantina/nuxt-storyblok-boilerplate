@@ -7,7 +7,8 @@
 @layer base {
   :root {
     --grid-margin: .75rem;
-    @apply md:[--grid-margin:8vw] xl:[--grid-margin:16vw];
+    --content-max-width: 1296px; // Adjust this value as needed
+    @apply md:[--grid-margin:2rem];
   }
 
   .content-grid {
@@ -15,18 +16,16 @@
 
     display: grid;
     grid-template-columns:
-    [full-width-start]
-      calc(var(--grid-margin) - 2rem)
+      [full-width-start] minmax(var(--grid-margin), 1fr)
       [content-start]
-        repeat(2, minmax(0, 1fr))
+        minmax(0, calc((var(--content-max-width) - 2 * var(--grid-margin)) / 12 * 2))
         [narrow-start]
-          repeat(8, minmax(0, 1fr))
+          repeat(8, minmax(0, calc((var(--content-max-width) - 2 * var(--grid-margin)) / 12)))
         [narrow-end]
-        repeat(2, minmax(0, 1fr))
+        minmax(0, calc((var(--content-max-width) - 2 * var(--grid-margin)) / 12 * 2))
       [content-end]
-      calc(var(--grid-margin) - 2rem)
-    [full-width-end]
-  ;
+      minmax(var(--grid-margin), 1fr)
+    [full-width-end];
   }
 
   .content-grid > :not(.content-full-width):not([class*="col-"]) {
@@ -44,6 +43,12 @@
   }
 
   body {
-    @apply antialiased h-full;
+    @apply antialiased h-full bg-gray-950 text-gray-50;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .transition {
+    transition: none !important;
   }
 }
