@@ -11,6 +11,7 @@
     "dev-ssl": "nuxt dev --https --ssl-cert <localhost.crt> --ssl-key <localhost.key>",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "preview-build": "nuxt build && nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts --fix",
     "storyblok-login": "storyblok login",
@@ -28,9 +29,10 @@
     "@stylistic/eslint-plugin": "^1.8.1",
     "@tailwindcss/typography": "^0.5.15",
     "@types/eslint": "^8.56.12",
-    "@vueuse/core": "^10.11.1",
-    "@vueuse/nuxt": "^10.11.1",
+    "@vueuse/core": "^11.0.3",
+    "@vueuse/nuxt": "^11.0.3",
     "eslint": "^8.57.0",
+    "eslint-plugin-tailwindcss": "^3.17.4",
     "eslint-plugin-vue": "^9.28.0",
     "nuxt": "^3.13.1",
     "nuxt-schema-org": "^3.4.0",
@@ -38,8 +40,8 @@
     "storyblok": "^3.33.2",
     "storyblok-generate-ts": "^1.16.0",
     "typescript": "^5.6.2",
-    "vite-svg-loader": "^4.0.0",
-    "vue-tsc": "^1.8.27"
+    "vite-svg-loader": "^5.1.0",
+    "vue-tsc": "^2.1.6"
   },
   "repository": {
     "type": "git",
