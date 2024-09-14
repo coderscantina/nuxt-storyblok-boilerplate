@@ -23,11 +23,8 @@ export default function useStoryblokHelpers() {
     }
   }
 
-  function setMetaFromPage(content: Pick<PageStoryblok, 'metatags' | 'ogImage'>, fallbacks?: UseSeoMetaInput) {
-    if (!content.metatags && !fallbacks) {
-      return
-    }
-    const meta = content.metatags || {}
+  function setMetaFromPage(content: Pick<PageStoryblok, 'meta' | 'ogImage'>, fallbacks?: UseSeoMetaInput) {
+    const meta = content.meta || {}
     const fb = fallbacks || {}
     const image = content.ogImage?.filename ? `${content.ogImage.filename}/m/` : undefined
 
@@ -49,11 +46,11 @@ export default function useStoryblokHelpers() {
       description,
       ogTitle: ogTitle || (typeof title === 'string' ? title : undefined),
       ogDescription: ogDescription || description,
-      ogImage: ogImage ? `${ogImage}1200x630` : undefined,
+      ogImage: ogImage ? `${ogImage}1200x630` : fb.ogImage,
       twitterCard: 'summary',
       twitterTitle: twitterTitle || ogTitle || (typeof title === 'string' ? title : undefined),
       twitterDescription: twitterDescription || ogDescription || description,
-      twitterImage: twitterImage ? `${twitterImage}1600x900` : undefined,
+      twitterImage: twitterImage ? `${twitterImage}1600x900` : fb.ogImage,
     })
   }
 
@@ -69,7 +66,7 @@ export default function useStoryblokHelpers() {
       return `mailto:${url}`
     }
 
-    return url.trim() ? url : localePath(`/${cached_url}`)
+    return url?.trim() ? url : localePath(`/${cached_url}`)
   }
 
   callOnce(async() => {
