@@ -6,11 +6,19 @@ module.exports = {
     'plugin:vue/vue3-recommended',
     'plugin:@stylistic/disable-legacy',
     'plugin:@stylistic/recommended-extends',
+    'plugin:tailwindcss/recommended',
   ],
   plugins: [
     // https://eslint.style/packages/default
     '@stylistic/eslint-plugin',
   ],
+  settings: {
+    tailwindcss: {
+      whitelist: [
+        'content-(grid|full-width|narrow)'
+      ]
+    }
+  },
   rules: {
     // js
     'no-console': 'warn',
