@@ -5,10 +5,12 @@ const version = $preview ? 'draft' : 'published'
 const route = useRoute()
 const slug = (route.params.slug || ['home']).join('/')
 const { locale } = useI18n()
+const { config } = useStoryblokHelpers()
 
 const story = await useAsyncStoryblok(slug, { version, language: locale.value })
 
 useHead({
+  titleTemplate: (title) => title ? `${title}` : config.value?.content.siteName,
   htmlAttrs: {
     lang: locale.value,
   },
@@ -19,7 +21,6 @@ useHead({
 <template>
   <div>
     <NuxtLayout
-      v-if="story"
       :layout="story.layout || 'default'"
     >
       <StoryblokComponent
