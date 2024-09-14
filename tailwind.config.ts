@@ -1,4 +1,13 @@
-import defaultTheme from 'tailwindcss/defaultTheme'
+function rfsToClamp(fs: number, {
+  rfsBase = 16,
+  rfsBreakpoint = 1840,
+  rfsFactor = 3,
+} = {}) {
+  const min = rfsBase + (Math.abs(fs) - rfsBase) / rfsFactor
+  const diff = fs - min
+  const varWidth = diff * 100 / rfsBreakpoint
+  return `clamp(${min / 16}rem, calc(${min / 16}rem + ${varWidth}vw), ${fs / 16}rem)`
+}
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
