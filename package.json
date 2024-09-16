@@ -8,7 +8,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "dev-ssl": "nuxt dev --https --ssl-cert <localhost.crt> --ssl-key <localhost.key>",
+    "dev-ssl": "nuxt dev --https --ssl-cert localhost.crt --ssl-key localhost.key",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "preview-build": "nuxt build && nuxt preview",
