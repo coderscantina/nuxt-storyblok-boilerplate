@@ -70,14 +70,30 @@ module.exports = {
       red: colors.red,
       yellow: colors.yellow,
       teal: colors.teal,
-    }) },
-  extend: {
-    transitionTimingFunction: {
-      default: 'cubic-bezier(0.25,0.1,0.25,1)',
-      butter: 'cubic-bezier(0.42,0,0.28,0.99)',
-      'micro-bounce': 'cubic-bezier(0,0.44,0.6,1)',
-      'mini-bounce': 'cubic-bezier(0.17,0.89,0.47,1.13)',
-      embellishment: 'cubic-bezier(0.42,0,0,1)',
+    }),
+    fontSize: {
+      xs: [rfsToClamp(12), '1rem'],
+      sm: [rfsToClamp(14), '1.25rem'],
+      base: [rfsToClamp(16), '1.5rem'],
+      lg: [rfsToClamp(20), '1.15rem'],
+      xl: [rfsToClamp(24), '1.75rem'],
+      '2xl': [rfsToClamp(32), '2.25rem'],
+      '3xl': [rfsToClamp(40), '2.5rem'],
+      '4xl': [rfsToClamp(48), '1'],
+      '5xl': [rfsToClamp(54), '1'],
+      '6xl': [rfsToClamp(64), '1'],
+      '7xl': [rfsToClamp(72), '1'],
+      '8xl': [rfsToClamp(96), '1'],
+      '9xl': [rfsToClamp(128), '1'],
+    },
+    extend: {
+      transitionTimingFunction: {
+        default: 'cubic-bezier(0.25,0.1,0.25,1)',
+        butter: 'cubic-bezier(0.42,0,0.28,0.99)',
+        'micro-bounce': 'cubic-bezier(0,0.44,0.6,1)',
+        'mini-bounce': 'cubic-bezier(0.17,0.89,0.47,1.13)',
+        embellishment: 'cubic-bezier(0.42,0,0,1)',
+      }
     }
   },
   plugins: [
