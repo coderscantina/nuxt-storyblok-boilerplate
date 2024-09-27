@@ -71,6 +71,15 @@ module.exports = {
       yellow: colors.yellow,
       teal: colors.teal,
     }) },
+  extend: {
+    transitionTimingFunction: {
+      default: 'cubic-bezier(0.25,0.1,0.25,1)',
+      butter: 'cubic-bezier(0.42,0,0.28,0.99)',
+      'micro-bounce': 'cubic-bezier(0,0.44,0.6,1)',
+      'mini-bounce': 'cubic-bezier(0.17,0.89,0.47,1.13)',
+      embellishment: 'cubic-bezier(0.42,0,0,1)',
+    }
+  },
   plugins: [
     require('@tailwindcss/typography'),
     function({ addBase, theme }) {
