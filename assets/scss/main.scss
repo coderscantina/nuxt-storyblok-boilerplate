@@ -6,13 +6,15 @@
 
 @layer base {
   :root {
-    --grid-margin: .75rem;
+    --grid-margin: 0px;
+    --accent-dark-color: var(--color-primary-400);
+    --accent-light-color: var(--color-primary-600);
     --content-max-width: 1296px; // Adjust this value as needed
-    @apply md:[--grid-margin:2rem];
+    @apply lg:[--grid-margin:2rem];
   }
 
   .content-grid {
-    @apply gap-3 md:gap-x-8;
+    @apply gap-4 lg:gap-x-8;
 
     display: grid;
     grid-template-columns:
