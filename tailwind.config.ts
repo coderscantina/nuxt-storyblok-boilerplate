@@ -87,6 +87,10 @@ module.exports = {
       '9xl': [rfsToClamp(128), '1'],
     },
     extend: {
+      boxShadow: {
+        soft: '2.7px 2.7px 2.2px rgba(0, 0, 0, 0.042), 6.4px 6.4px 5.3px rgba(0, 0, 0, 0.061), 12px 12px 10px rgba(0, 0, 0, 0.075), 21.4px 21.4px 17.9px rgba(0, 0, 0, 0.089), 40.1px 40.1px 33.4px rgba(0, 0, 0, 0.108), 96px 96px 80px rgba(0, 0, 0, 0.15)',
+        'soft-lg': '2.7px 2.7px 2.2px rgba(0, 0, 0, 0.141), 6.4px 6.4px 5.3px rgba(0, 0, 0, 0.202), 12px 12px 10px rgba(0, 0, 0, 0.25), 21.4px 21.4px 17.9px rgba(0, 0, 0, 0.298), 40.1px 40.1px 33.4px rgba(0, 0, 0, 0.359), 96px 96px 80px rgba(0, 0, 0, 0.5)'
+      },
       transitionTimingFunction: {
         default: 'cubic-bezier(0.25,0.1,0.25,1)',
         butter: 'cubic-bezier(0.42,0,0.28,0.99)',
