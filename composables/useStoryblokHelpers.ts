@@ -17,7 +17,7 @@ export default function useStoryblokHelpers() {
   async function loadConfig() {
     const data = await fetchStory('_config')
     if (data.value) {
-      config.value = data.value
+      config.value = data.value as unknown as ConfigStoryblok
     }
   }
 
@@ -56,10 +56,10 @@ export default function useStoryblokHelpers() {
     })
   }
 
-  function buildLink({ linktype, url, cached_url, anchor }: MultilinkStoryblok) {
+  function buildLink({ linktype, url, cached_url: cachedUrl, anchor }: MultilinkStoryblok) {
     if (linktype === 'story') {
       const postfix = anchor ? `#${anchor}` : ''
-      return localePath(`/${cached_url}${postfix}`)
+      return localePath(`/${cachedUrl}${postfix}`)
     }
     if (linktype === 'url') {
       return url
@@ -68,7 +68,7 @@ export default function useStoryblokHelpers() {
       return `mailto:${url}`
     }
 
-    return url?.trim() ? url : localePath(`/${cached_url}`)
+    return url?.trim() ? url : localePath(`/${cachedUrl}`)
   }
 
   callOnce(async() => {
