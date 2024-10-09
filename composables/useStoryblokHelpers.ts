@@ -15,12 +15,14 @@ export default function useStoryblokHelpers() {
   }
 
   async function loadConfig() {
-    const { data } = await useAsyncData<ConfigStoryblok>('config', () => useAsyncStoryblok('_config', defaults)
-      .catch(() => ref(null))
-    )
+    const data = await fetchStory('_config')
     if (data.value) {
       config.value = data.value
     }
+  }
+
+  function fetchStory(slug: string) {
+    return useAsyncStoryblok(slug, { ...defaults })
   }
 
   function setMetaFromPage(content: Pick<PageStoryblok, 'meta' | 'ogImage'>, fallbacks?: UseSeoMetaInput) {
@@ -77,6 +79,7 @@ export default function useStoryblokHelpers() {
     buildLink,
     config,
     defaults,
+    fetchStory,
     setMetaFromPage
   }
 }
