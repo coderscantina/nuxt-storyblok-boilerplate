@@ -18,9 +18,9 @@
     "storyblok-generate-types": "storyblok pull-components --space=<space> && storyblok-generate-ts source=./components.<space>.json target=./storyblok/types/index && rm ./*.<space>.json"
   },
   "dependencies": {
-    "@storyblok/nuxt": "^6.0.12",
+    "@storyblok/nuxt": "^6.0.13",
     "dayjs": "^1.11.13",
-    "marked": "^13.0.3"
+    "marked": "^14.1.2"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
@@ -32,14 +32,14 @@
     "@vueuse/core": "^11.1.0",
     "@vueuse/nuxt": "^11.1.0",
     "eslint": "^8.57.1",
-    "eslint-plugin-tailwindcss": "^3.17.4",
+    "eslint-plugin-tailwindcss": "^3.17.5",
     "eslint-plugin-vue": "^9.28.0",
     "nuxt": "^3.13.2",
     "nuxt-schema-org": "^3.4.0",
-    "sass": "^1.79.3",
-    "storyblok": "^3.33.3",
-    "storyblok-generate-ts": "^1.16.0",
-    "typescript": "^5.6.2",
+    "sass": "^1.79.4",
+    "storyblok": "^3.34.0",
+    "storyblok-generate-ts": "^2.1.0",
+    "typescript": "^5.6.3",
     "vite-svg-loader": "^5.1.0",
     "vue-tsc": "^2.1.6"
   },
