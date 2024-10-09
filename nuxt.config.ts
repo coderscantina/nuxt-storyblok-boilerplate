@@ -11,6 +11,8 @@ export default defineNuxtConfig({
     'nuxt-schema-org',
   ],
 
+  compatibilityDate: '2024-10-09',
+
   devtools: { enabled: true },
 
   storyblok: {
